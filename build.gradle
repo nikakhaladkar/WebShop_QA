@@ -1,0 +1,30 @@
+group 'Hive_Home'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'groovy'
+apply plugin: 'java'
+apply plugin: 'idea'
+
+sourceCompatibility = 1.5
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    compile 'org.codehaus.groovy:groovy-all:2.3.11'
+    testCompile group: 'junit', name: 'junit', version: '4.11'
+    compile 'org.seleniumhq.selenium:selenium-java:3.0.1'
+    compile 'org.testng:testng:6.8.1'
+    compile 'junit:junit:4.8.2'
+
+
+
+}
+
+
+task functionalTests(type: Test){
+
+    useTestNG()
+
+}
